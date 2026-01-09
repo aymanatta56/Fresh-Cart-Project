@@ -30,14 +30,10 @@ const router= createBrowserRouter([
 {path:"/Register", element:<ProtectedUser><Register/></ProtectedUser>},
 {path:"/Login", element:<ProtectedUser><Login/></ProtectedUser>},
 {path:"/ProductsDetails/:id", element:<ProductsDetails/>},
-{path:"cart", element:
-<ProtectedRoute>
-  <Cart/>
-  </ProtectedRoute>
-},
+{path:"cart", element:<Cart/>},
 {path:"/Order", element:<ProtectedRoute><Order/></ProtectedRoute>}
   ] },
-])
+])  
 
 export default function App() {
   

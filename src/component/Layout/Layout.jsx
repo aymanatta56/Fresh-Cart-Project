@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
+import Upbtn from './../Upbtn/Upbtn';
 
 
 export default function Layout() {
@@ -9,6 +10,7 @@ export default function Layout() {
     <Navbar/>
     
     <Outlet/>
+    <Upbtn/>
     
     <Footer/>
     </>
