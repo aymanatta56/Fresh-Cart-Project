@@ -106,7 +106,7 @@ function handelLogout(){
 
 
     <div   className="hidden w-full lg:block lg:w-auto" id="navbar-default">
-      <ul className="font-medium flex flex-col justify-center items-center p-4 md:p-0  md:flex-row md:space-x-8 ">
+      <ul className="font-medium flex flex-col justify-center items-center p-4 md:p-0  md:flex-row md:space-x-8 ${open ? 'block':'hidden'} `">
         <li className='relative after:absolute after:w-full after:h-[1px] after:left-0 after:bottom-0 after:bg-green-500 after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300'>
           <NavLink to="/Products" className="block py-2 px-3   " aria-current="page">Products</NavLink>
         </li>
