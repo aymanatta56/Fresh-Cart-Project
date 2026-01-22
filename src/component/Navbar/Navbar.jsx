@@ -1,13 +1,14 @@
 
 import { Link, NavLink, useNavigate } from 'react-router';
 import FreshCartLogo from '../../images/freshcart-logo.svg';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContextObj } from '../../Context/AuthContext';
 import Cart from '../Cart/Cart';
 import { CartContext } from '../../Context/CartContext';
 
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
  const{numOfCartItems} = useContext(CartContext)
 const {userToken, setUserToken} = useContext(AuthContextObj);
 const navigate = useNavigate();
@@ -68,15 +69,43 @@ function handelLogout(){
           </ul>
       </div>
 
-    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="false">
+    <button  onClick={() => setOpen(!open)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="open">
       <span className="sr-only">Open main menu</span>
       <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeWidth={2} d="M5 7h14M5 12h14M5 17h14" /></svg>
     </button>
+    {/* <button
+  onClick={() => setOpen(!open)}
+  data-collapse-toggle="navbar-default"
+  type="button"
+  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-md md:hidden
+             hover:bg-neutral-secondary-soft hover:text-heading
+             focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+  aria-expanded={open}
+  aria-label="Toggle navigation"
+>
+  <span className="sr-only">Open main menu</span>
+
+  <svg
+    className="w-6 h-6"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth={2}
+      d="M5 7h14M5 12h14M5 17h14"
+    />
+  </svg>
+</button> */}
+
     </div>
 
 
 
-    <div className="hidden w-full lg:block lg:w-auto" id="navbar-default">
+    <div   className="hidden w-full lg:block lg:w-auto" id="navbar-default">
       <ul className="font-medium flex flex-col justify-center items-center p-4 md:p-0  md:flex-row md:space-x-8 ">
         <li className='relative after:absolute after:w-full after:h-[1px] after:left-0 after:bottom-0 after:bg-green-500 after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300'>
           <NavLink to="/Products" className="block py-2 px-3   " aria-current="page">Products</NavLink>
