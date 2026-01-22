@@ -14,7 +14,7 @@ export default function Home() {
   console.log('All letters have animated!');
 };
   return (
-    <div className="container mx-auto  mt-32">
+    <div className="container mx-auto  mt-32 p-5">
       <div className="grid grid-cols-8 gap-8">
         <div className="col-span-8 items-center text-center md:items-start  md:text-left md:col-span-5 flex flex-col justify-center gap-4">
           {/* <h1 className="text-7xl font-extrabold capitalize">Limited Time Offer! Up to 50% OFF!</h1> */}
@@ -63,7 +63,7 @@ export default function Home() {
 
       </div>
         </div>
-      <div className=" grid grid-cols-6 place-items-center mt-16">
+      <div className=" grid grid-cols-6 gap-5 place-items-center mt-16">
 
         <img className="col-span-3  md:col-span-1 w-20" src={image1} alt="" />
         <img className="col-span-3  md:col-span-1 w-20" src={image2} alt="" />

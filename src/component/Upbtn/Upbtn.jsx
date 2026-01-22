@@ -30,15 +30,12 @@ export default function Upbtn() {
           onClick={() =>
             window.scrollTo({ top: 0, behavior: "smooth" })
           }
-          className="fixed bottom-5 right-5 cursor-pointer h-20 w-20 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
+          className="fixed bottom-5 right-5 cursor-pointer h-15 w-15 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
         >
-          <i className="fa-solid fa-angle-up text-5xl"></i>
+          <i className="fa-solid fa-angle-up text-5xl "></i>
         </button>
       )}
     </>
   );
-// {/* } */}
 
-    // </>
-//   )
 }
